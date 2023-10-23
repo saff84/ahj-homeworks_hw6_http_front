@@ -1,0 +1,62 @@
+html {
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+.ticketswidget {
+  padding: 20px;
+  width: 750px;
+  font-weight: 400;
+}
+
+.ticketswidget p {
+  font-weight: 300;
+}
+
+.row {
+  display: table-row;
+  border: 1px solid #495057;
+  vertical-align: baseline;
+}
+
+.row div {
+  display: table-cell;
+  padding: 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #495057;
+}
+
+.row div:nth-child(n + 4) {
+  padding: 10px;
+}
+
+.row .title {
+  width: 380px;
+}
+
+.row .date {
+  width: 215px;
+}
+
+.row button {
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  border: 1px solid #495057;
+  width: 400px;
+  padding: 30px 47px;
+  margin: 0 20px;
+}
+
+.modal input {
+  margin: 5px 0;
+}
