@@ -2,7 +2,7 @@ export default class Logic {
   constructor(gui) {
     this.gui = gui;
     this.tickets = null;
-    this.url = 'http://localhost:7070/';
+    this.url = 'http://localhost:8081/';
     this.modalSubmit = this.modalSubmit.bind(this);
     this.modalReset = this.modalReset.bind(this);
   }
@@ -76,7 +76,7 @@ export default class Logic {
 
   addTicket() {
     this.gui.modal.classList.remove('hidden');
-    this.gui.modal.innerHTML = this.gui.editTemplate('Добавить тикет', '', '', 'createTicket');
+    this.gui.modal.innerHTML = this.gui.editTemplate('Добавить тикет','', '', '', 'createTicket');
     this.gui.modal.addEventListener('submit', this.modalSubmit);
     this.gui.modal.addEventListener('reset', this.modalReset);
   }
@@ -95,7 +95,7 @@ export default class Logic {
     const result = JSON.parse(await this.sendXHR('GET', `ticketById&id=${id}`));
 
     this.gui.modal.innerHTML = this.gui.editTemplate(
-      'Изменить тикет', result.name, result.description, 'edit', id,
+      'Изменить тикет', result.status, result.name, result.description, 'edit', id
     );
     this.gui.modal.addEventListener('submit', this.modalSubmit);
     this.gui.modal.addEventListener('reset', this.modalReset);

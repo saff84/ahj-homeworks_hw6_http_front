@@ -1,7 +1,7 @@
 {
-  "name": "httpfront",
+  "name": "http_front",
   "version": "1.0.0",
-  "description": "HTTP Front end",
+  "description": "HTTP Front",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",

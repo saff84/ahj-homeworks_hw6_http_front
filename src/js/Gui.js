@@ -20,10 +20,11 @@ export default class Gui {
     </div>`;
   }
 
-  editTemplate(header, title, description, name, id) {
+  editTemplate(header, status, title, description, name, id) {
     return `
     <form name=${name} data-idfor="${id}">
       <h3>${header}</h3>
+      Статус <input type="text" name="status" value="${status}"><br>
       Краткое описание <input type="text" name="title" value="${title}"><br>
       Подробное описание <input type="text" name="description" value="${description}"><br>
       <button type="reset">Отмена</button>
@@ -42,7 +43,7 @@ export default class Gui {
     return `
     <form name="del" data-idfor=${id}>
       <h3>Удалить тикет</h3>
-      <p>Are you sure? It's can't be cancelled.</p>
+      <p>Уверены? Это невозможно отменить.</p>
       <button type="reset">Отмена</button>
       <button type="submit">Ок</button>
     </form>
