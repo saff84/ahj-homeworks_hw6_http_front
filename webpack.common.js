@@ -6,7 +6,6 @@ module.exports = {
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    assetModuleFilename: 'assets/[name][ext]',
     publicPath: '',
   },
   module: {
@@ -29,35 +28,20 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader, {
-            loader: 'css-loader',
-            options: {
-              esModule: false,
-            }
-          }
+          MiniCssExtractPlugin.loader, 'css-loader',
         ],
       },
       {
-        test: /\.svg$/,
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
-      },
-      {
-        test: /\.(png|jpg|gif|ico)$/i,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            esModule: false,
-            name: '[name].[ext]',
-          },
-        }],
       },
     ],
   },
-
   plugins: [
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',
+      inject: 'body',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',

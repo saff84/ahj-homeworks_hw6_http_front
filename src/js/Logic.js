@@ -52,7 +52,10 @@ export default class Logic {
       const request = new FormData(document.forms[1]);
       const result = JSON.parse(await (this.sendXHR('POST', request, 'createTicket')));
       this.gui.list.innerHTML += this.gui.rowTemplate(
-        result.id, result.status, result.name, result.created,
+        result.id,
+        result.status,
+        result.name,
+        result.created,
       );
     }
     this.getTickets();
@@ -76,7 +79,7 @@ export default class Logic {
 
   addTicket() {
     this.gui.modal.classList.remove('hidden');
-    this.gui.modal.innerHTML = this.gui.editTemplate('Добавить тикет','', '', '', 'createTicket');
+    this.gui.modal.innerHTML = this.gui.editTemplate('Добавить тикет', '', '', '', 'createTicket');
     this.gui.modal.addEventListener('submit', this.modalSubmit);
     this.gui.modal.addEventListener('reset', this.modalReset);
   }
@@ -94,9 +97,7 @@ export default class Logic {
     const { id } = e.target.closest('.row').dataset;
     const result = JSON.parse(await this.sendXHR('GET', `ticketById&id=${id}`));
 
-    this.gui.modal.innerHTML = this.gui.editTemplate(
-      'Изменить тикет', result.status, result.name, result.description, 'edit', id
-    );
+    this.gui.modal.innerHTML = this.gui.editTemplate('Изменить тикет', result.status, result.name, result.description, 'edit', id);
     this.gui.modal.addEventListener('submit', this.modalSubmit);
     this.gui.modal.addEventListener('reset', this.modalReset);
   }
@@ -111,7 +112,10 @@ export default class Logic {
     this.gui.list.innerHTML = '';
     tArr.forEach((ticket) => {
       this.gui.list.innerHTML += this.gui.rowTemplate(
-        ticket.id, ticket.status, ticket.name, ticket.created,
+        ticket.id,
+        ticket.status,
+        ticket.name,
+        ticket.created,
       );
     });
   }
