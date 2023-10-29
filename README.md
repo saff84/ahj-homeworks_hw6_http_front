@@ -1,5 +1,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/e9len1m3rhj2ju2t/branch/main?svg=true)](https://ci.appveyor.com/project/saff84/ahj-homeworks-hw6-http-front/branch/main)
 
+https://saff84.github.io/ahj-homeworks_hw6_http_front/
+
 #### Домашние задания к курсу «Продвинутый JavaScript в браузере»
 ### 7. Работа с HTTP. HelpDesk
 
